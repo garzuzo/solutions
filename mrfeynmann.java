@@ -23,7 +23,7 @@ public class mrfeynmann {
 			double actual = Double.parseDouble(caso);
 
 			boolean stop = false;
-			double a = 0;
+			int a = 0;
 			for (int i = 1; i <= 1000 && !stop; i++) {
 
 				int inferior = i;
@@ -34,16 +34,15 @@ public class mrfeynmann {
 				if (inf <= actual && sup >= actual) {
 					stop = true;
 					if (actual - inf > sup - actual) {
-						a = superior;
+						a = sup;
 					} else {
-						a = inferior;
+						a = inf;
 					}
 				}
 
 			}
 
-			double part=1 / (2*a);
-			double dx =(double) part * (double)(actual - (a * a));
+			double dx = (1 / 2) * (actual - (a * a)) / a;
 
 			double raiz = a + dx;
 
